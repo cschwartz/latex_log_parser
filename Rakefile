@@ -4,5 +4,6 @@ begin
 
   RSpec::Core::RakeTask.new(:spec)
   RuboCop::RakeTask.new
-rescue LoadError
+rescue LoadError => e
+  puts "Failed to load tasks: '#{ e }'"
 end
